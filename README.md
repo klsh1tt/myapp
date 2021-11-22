@@ -18,3 +18,5 @@ my first Flutter project.
     ```
     $ flutter run --device-id chrome
     ```
+## 実行後（デモ画面）  
+https://gyazo.com/a17cce39912377f2d9ae24cd6f3129d2
