@@ -112,11 +112,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.green,
               ),
             ),
-            const Text('文字の太さとアンダーラインをつけます',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  decoration: TextDecoration.underline,
-                )),
+            const Text(
+              '文字の太さとアンダーラインをつけます',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.underline,
+              ),
+            ),
             const SizedBox(
               width: double.infinity,
               child: Text(
