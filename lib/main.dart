@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'ページタイトルです',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'ヘッダのタイトルです'),
     );
   }
 }
@@ -96,11 +96,33 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'ボタンをクリックした回数を記録します',
             ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            const Text('画像URLから画像を取得'),
+            Image.network(
+                'https://3.bp.blogspot.com/-grgJJ3LEG-o/VGLMEXw8lMI/AAAAAAAAo70/nSBQRjU-WLs/s800/room07_gijutsu.png'),
+            const Text(
+              '文字サイズと文字を変えてみました',
+              style: TextStyle(
+                fontSize: 50,
+                color: Colors.green,
+              ),
+            ),
+            const Text('文字の太さとアンダーラインをつけます',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.underline,
+                )),
+            const SizedBox(
+              width: double.infinity,
+              child: Text(
+                '文字を左揃えにします',
+                textAlign: TextAlign.start,
+              ),
             ),
           ],
         ),
