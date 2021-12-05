@@ -48,13 +48,14 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SizedBox(
         width: double.infinity,
-        child: ListView.builder(
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(items[index]),
-            );
-          },
+        child: GridView.count(
+          crossAxisCount: 2,
+          children: List.generate(
+            100,
+            (index) {
+              return Center(child: Text('item$index'));
+            },
+          ),
         ),
       ),
     );
