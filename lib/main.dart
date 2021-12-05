@@ -37,25 +37,41 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-final items = List<String>.generate(100, (i) => "item $i");
+final items = List<String>.generate(
+  100,
+  (index) => "サロンアプリの画面作り$index",
+);
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text('Flutterアプリ'),
       ),
       body: SizedBox(
         width: double.infinity,
-        child: GridView.count(
-          crossAxisCount: 2,
-          children: List.generate(
-            100,
-            (index) {
-              return Center(child: Text('item$index'));
-            },
-          ),
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            final item = items[index];
+            return Row(
+              children: [
+                SizedBox(
+                  height: 100,
+                  width: 200,
+                  child: Image.network(
+                      'https://3.bp.blogspot.com/-grgJJ3LEG-o/VGLMEXw8lMI/AAAAAAAAo70/nSBQRjU-WLs/s800/room07_gijutsu.png'),
+                ),
+                Text(
+                  item,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
