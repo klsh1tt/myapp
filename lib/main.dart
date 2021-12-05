@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: '入力フォームの実装'),
+      home: const MyHomePage(title: 'ListView'),
     );
   }
 }
@@ -37,7 +37,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-final myController = TextEditingController();
+final items = List<String>.generate(100, (i) => "item $i");
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -48,23 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SizedBox(
         width: double.infinity,
-        child: Column(
-          children: [
-            TextField(
-              decoration: const InputDecoration(
-                border: InputBorder.none,
-                hintText: 'これはプレースホルダです 文字を入力して下さい',
-              ),
-              autofocus: true,
-              controller: myController,
-            ),
-            ElevatedButton(
-              child: const Text('取得'),
-              onPressed: () {
-                print(myController.text);
-              },
-            )
-          ],
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(items[index]),
+            );
+          },
         ),
       ),
     );
